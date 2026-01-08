@@ -1,0 +1,133 @@
+estudos:
+1:https://chatgpt.com/c/695fb7ac-0e88-832d-bafa-49a17c95fb58
+2:https://chatgpt.com/c/695fcbf2-be98-832d-8b04-61a97d71ba18
+
+
+(Arquitetura)
+
+[(FRONTEND) REACT ]
+
+   |
+   |
+   |
+   V
+
+[API GATEWAY - NESTJS]
+   |
+   |
+   |
+   V
+
+
+[Postgree sql]
+-Public (Master)
+- tenant_abc
+- tenant_xyz
+
+
+
+
+Estrutura do backend
+
+     
+-(P)BACKEND
+ |
+ |
+ |--(P)src 
+ |main.ts
+ |app.modules.ts
+ |
+ |--(P)auth
+ |auth.module.ts
+ |auth.controller.ts
+ |auth.service.ts
+ |jwt.strategy.ts
+ |
+ |--(P) users
+ |users.modules.ts
+ |users.services.ts
+ |user.entity.ts
+ |
+ |--(P)dashboard
+ |dashboard.controller.ts
+ |
+ |--(P)database
+ |database.module.ts
+ |tennant-connection.services.ts
+ |
+ |
+(RAIZ)
+.env
+package.json 
+
+
+
+SIGNIFICADO CADA ARQUIVO DO BACKEND
+
+
+SRC: ONDE VIVE 100% DA APLICAÇÃO
+
+main.ts ponto de entrada da  aplicação
+
+app.module.ts é o modulo raiz da aplicação responsável por conectar cada modulo do sistema
+
+
+AUTH: RESPONSAVEL PELA AUTENTICAÇÃO, LOGIN E TOKENS DE SEGURANÇA
+
+auth.modules.ts: define o modulo de autenticação.
+
+auth.controler.ts: define rotas de autenticação
+
+auth.service.ts: define a logica de autenticação
+
+jwt.strategy.ts: define como o jwt sera validado
+
+
+USERS:RESPONSAVEL POR USUARIOS, PERFIS E ENTIDADES
+user.module.ts: define o modulo de usuaros
+
+user.service.ts: camada de regras de negócios dos usuários
+
+user.enity.ts: define a tabela de usuários no banco
+
+
+DASHBOARD:RESPONSAVEL POR DADOS AGREGADOS E INDICADORES
+
+dashboard.controller.ts: controlado do painel principal
+
+
+DATABASE: PASTA DO BANCO DE DADOS
+
+database.module.ts: arquivo responsável pela conexão com banco de dados
+
+tennant-connection.services.ts: responsável por resolver o banco correto por tenant
+
+
+(RAIZ)
+.env: variável de ambiente
+
+package.json: manifesto do projeto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
